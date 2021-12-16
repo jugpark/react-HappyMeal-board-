@@ -2,9 +2,9 @@
 
 class UserStorage {
     static #users = {
-        id: ["A", "B", "C"],
+        id: ["Jugwang", "Park", "JJ"],
         password: ["1234", "1234", "1234"],
-        name: ["A", "B", "C"],
+        name: ["Jugwang", "Park", "JJ"],
     };
 
     static getUsers(...fields) {
@@ -26,6 +26,7 @@ class UserStorage {
             newUser[info] = users[info][idx];
             return newUser;
         }, {});
+        return userInfo;
     }
 }
 module.exports = UserStorage;
