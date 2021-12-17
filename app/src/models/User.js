@@ -1,10 +1,12 @@
 "use strict";
 
 const UserStorage = require('./UserStorage');
+
 class User {
     constructor(body) {
         this.body = body;
     }
+    
     login() {
         const body = this.body;
         const { id, password } = UserStorage.getUserInfo(body.id);

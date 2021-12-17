@@ -5,6 +5,7 @@ class UserStorage {
         id: ["Jugwang", "Park", "JJ"],
         password: ["1234", "1234", "1234"],
         name: ["Jugwang", "Park", "JJ"],
+        email: ["J@gmail.com", "K@gmai.com", "U@gmail.com"]
     };
 
     static getUsers(...fields) {
