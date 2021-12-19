@@ -22,10 +22,11 @@ function login() {
             if (res.success) {
                 location.href = "/";
             } else {
+                if (res.err) return alert(res.err);
                 alert(res.msg);
             }
         })
         .catch((err) => {
             console.error("로그인 중 에러 발생");
-        })
+        });
 }
