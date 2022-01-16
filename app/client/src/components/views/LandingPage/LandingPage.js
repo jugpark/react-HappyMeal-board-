@@ -1,9 +1,12 @@
 import React from 'react';
 import './LandingPage.css';
+import Winery from '../../../images/winery.jpg';
 
-function LandingPage() {
+const LandingPage = () => {
     return (
-        <div>Landing</div>
+        <div className='main-image'>
+            <img src={Winery} alt='A'/>
+        </div>
     );
 }
 
