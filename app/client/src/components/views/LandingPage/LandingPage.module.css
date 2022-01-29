@@ -1,0 +1,46 @@
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("../../../images/concrete.jpg");
+}
+
+.img2 {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-color: black;
+}
+
+.content{
+  position: relative;
+  align-items: center;
+  text-align: center;
+  color: whitesmoke;
+  z-index: 10;
+  margin-top: -5%;
+  flex-direction: column;
+}
+.title{
+  font-size: 2em;
+}
+.view{
+  padding: 10px 10px;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-top: 1rem;
+
+}

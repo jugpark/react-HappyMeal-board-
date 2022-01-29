@@ -1,5 +1,5 @@
-import React,{ useState } from 'react';
-import FormContainer from '../../FormContainers/FormContainer';
+import React,{ useState, Fragment } from 'react';
+
 
 
 function RegisterPage() {
@@ -35,7 +35,7 @@ function RegisterPage() {
     }
     return (
         <div>
-            <FormContainer>
+            <Fragment>
             <h2>Register</h2>
             <form onSubmit={submitHandler}>
                 <div className='form__content'>
@@ -69,7 +69,7 @@ function RegisterPage() {
                 </div>
                 <button className='btn'>Sign In</button>
             </form>
-        </FormContainer>
+        </Fragment>
         </div>
     )
 }

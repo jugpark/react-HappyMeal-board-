@@ -1,31 +1,44 @@
-import React, { Fragment } from 'react';
-import { NavLink } from 'react-router-dom';
-import classes from './Header.module.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styles from "./Header.module.css";
+import { faSearch, faShoePrints } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
-    return (
-        <Fragment>
-        <header className={classes.header}>
-            <nav>
-                <h1>MyOwnWinery</h1>
-                <ul>
-                    <li>
-                        <NavLink to='/' className={(isActive) => !isActive.isActive ? "" : classes.active}>Winery</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/products' className={(isActive) => !isActive.isActive ? "" : classes.active}>Products</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/login' className={(isActive) => !isActive.isActive ? "" : classes.active}>Sign In</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/register' className={(isActive) => !isActive.isActive ? "" : classes.active}>Register</NavLink>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        </Fragment>
-    )
-}
+  return (
+    <header>
+      <nav>
+        <div className={styles.header}>
+          <NavLink className={styles.logo} to="/">
+              <FontAwesomeIcon icon={faShoePrints} className={styles.icon_wine}/>
+            GG
+          </NavLink>
+          <ul className={styles.menu}>
+            <li>
+              <NavLink to="/search">
+                <FontAwesomeIcon icon={faSearch} className={styles.icon_search}/>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/products" className={styles.product}>
+                Products
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/login" className={styles.signin}>
+                Sign In
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/register" className={styles.register}>
+                Register
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

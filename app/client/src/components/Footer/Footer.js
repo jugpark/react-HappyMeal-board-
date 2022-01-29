@@ -1,16 +1,14 @@
-import React from 'react'
-import { Button } from 'antd';
+import React from "react";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
-    return (
-        <div style={{
-            height: '80px', display: 'flex',
-            flexDirection: 'column', alignItems: 'center',
-            justifyContent: 'center', fontSize:'1rem'
-        }}>
-           <p> Welcome to buy your own wine <Button type="smile" /></p>
-        </div>
-    )
-}
+  return (
+    <footer className={styles.footer}>
+        <span className={styles.copy}>
+          Copyright Jugwang @ 2022. All reserved
+        </span>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
