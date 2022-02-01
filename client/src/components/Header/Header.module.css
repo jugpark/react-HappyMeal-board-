@@ -18,6 +18,11 @@ text-decoration: none;
 color: whitesmoke;
 font-size: 30px;
 }
+.logo_dark{
+text-decoration: none;
+color: black;
+font-size: 30px;
+}
 .menu {
 display: flex;
 text-decoration: none;
@@ -29,40 +34,46 @@ padding-right: 30px;
 padding: 8px 12px;
 }
 .icon_wine {
-  color: lightyellow;
-  font-size: 24px;
-  padding-right: 10px;
+color: lightyellow;
+font-size: 24px;
+padding-right: 10px;
 }
 
 .icon_search {
-  padding-top: 5px;
+padding-top: 5px;
 color: whitesmoke;
-font-size: 20px;
-}
-.product{
-color: whitesmoke;
-text-decoration: none;
-list-style: none;
 font-size: 20px;
 }
 
-.signin{
+.content{
 color: white;
 text-decoration: none;
 list-style-type: none;
 font-size: 20px;
 }
 
-.register{
-color: white;
+.content_dark{
+color: black;
 text-decoration: none;
 list-style-type: none;
+font-size: 20px;
+}
+
+.icon_wine_dark {
+color: black;
+font-size: 24px;
+padding-right: 10px;
+}
+
+.icon_search_dark {
+padding-top: 5px;
+color: black;
 font-size: 20px;
 }
 
 @media screen and (max-width: 600px) {
-  .header {
-    flex-direction: column;
-  }
-  .menu {flex-direction: column;}
+.header {
+flex-direction: column;
+}
+.menu {flex-direction: column;}
 }

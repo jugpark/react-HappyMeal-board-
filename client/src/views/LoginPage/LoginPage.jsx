@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from "react";
+import styles from "./LoginPage.module.css";
+import { NavLink } from "react-router-dom";
 
 const LoginPage = () => {
   const [id, setId] = useState("");
@@ -22,24 +24,30 @@ const LoginPage = () => {
   };
   return (
     <Fragment>
-      <h2>Sign in</h2>
-      <form onSubmit={submitHandler}>
-        <div className="form__content">
+      <h2 className={styles.title}>Sign in</h2>
+      <form onSubmit={submitHandler} className={styles.form}>
+        <div>
+          <div>Id</div>
           <input
+            className={styles.input}
             type="id"
             placeholder="Enter id"
             value={id}
             onChange={idChangeHandler}
           />
-          <div></div>
+          <div>Password</div>
           <input
+            className={styles.input}
             type="password"
             placeholder="Enter password"
             value={password}
             onChange={passwordChangeHandler}
           />
         </div>
-        <button className="btn">Sign In</button>
+        <button className={styles.view}>Sign In</button>
+        <NavLink to="/register" className={styles.link}>
+          Not Registered?
+        </NavLink>
       </form>
     </Fragment>
   );

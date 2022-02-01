@@ -12,7 +12,7 @@
   height: 100vh;
   background-size: cover;
   background-position: center center;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("../../../images/concrete.jpg");
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("../../images/concrete.jpg");
 }
 
 .img2 {
@@ -38,9 +38,19 @@
 }
 .view{
   padding: 10px 10px;
+  border: 2px solid lightgray;
+  color: lightgray;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.view:hover{
+  padding: 10px 10px;
   border: 2px solid whitesmoke;
   color: whitesmoke;
   text-decoration: none;
   margin-top: 1rem;
-
+  cursor: pointer;
+  transition: .5s ease-out;
+  box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
 }

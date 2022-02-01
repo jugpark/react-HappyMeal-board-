@@ -1,14 +1,36 @@
 .footer{
-    position: fixed;
     bottom: 0;
     left: 0;
-    height: 100px;
+    padding: 2rem 1rem;
+    height: 115px;
     width: 100%;
     text-align: center;
-    background: transparent;
-    color: whitesmoke;
+    background: white;
+    color: black;
 }
 .copy{
+    display: flex;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    flex-direction: column;
+}
+
+.icons {
+    margin: 1rem 0;
     display: inline-block;
-    margin-top: 50px;
+}
+
+.icon {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    margin: 2rem 1rem;
+    color: black;
+    cursor: pointer;
+    transition: .5s ease-out;
+    box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
+}
+.icon:hover {
+    color: gray;
+    transform: scale(2);
 }
