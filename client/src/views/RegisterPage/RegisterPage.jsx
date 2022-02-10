@@ -1,37 +1,52 @@
 import React, { useState, Fragment } from "react";
 import styles from "./RegisterPage.module.css";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../actions/userAction";
 
 function RegisterPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-
-    const data = {
-      name: name,
-      id: id,
-      password: password,
-      email: email,
-    };
-    console.log(data);
-  };
-
-  const idChangeHandler = (event) => {
-    setId(event.target.value);
-  };
-  const passwordChangeHandler = (event) => {
-    setPassword(event.target.value);
-  };
   const nameChangeHandler = (event) => {
     setName(event.target.value);
   };
   const emailChangeHandler = (event) => {
     setEmail(event.target.value);
   };
+  const passwordChangeHandler = (event) => {
+    setPassword(event.target.value);
+  };
+  const confirmPasswordChangeHandler = (event) => {
+    setConfirmPassword(event.target.value);
+  };
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    if(password !== confirmPassword) {
+      return alert("passwords should be same")
+    }
+
+    const body = {
+      name: name,
+      email: email,
+      password: password,
+    };
+    dispatch(registerUser(body)).then((response) => {
+      if (response.payload.success) {
+        navigate("/login");
+      } else {
+        alert("Failed to Sign up");
+      }
+    });
+  };
+
   return (
     <div>
       <Fragment>
@@ -46,13 +61,13 @@ function RegisterPage() {
               value={name}
               onChange={nameChangeHandler}
             />
-            <div>Id</div>
+            <div>Email</div>
             <input
               className={styles.input}
-              type="id"
-              placeholder="Enter id"
-              value={id}
-              onChange={idChangeHandler}
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={emailChangeHandler}
             />
             <div>Password</div>
             <input
@@ -62,16 +77,18 @@ function RegisterPage() {
               value={password}
               onChange={passwordChangeHandler}
             />
-            <div>Email</div>
+            <div>Confirm Password</div>
             <input
               className={styles.input}
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={emailChangeHandler}
+              type="password"
+              placeholder="Enter password"
+              value={confirmPassword}
+              onChange={confirmPasswordChangeHandler}
             />
           </div>
-          <button onSubmit={submitHandler} className={styles.view}>Register</button>
+          <button onSubmit={submitHandler} className={styles.view}>
+            Register
+          </button>
           <NavLink to="/login" className={styles.link}>
             Already Registered?
           </NavLink>
