@@ -34,7 +34,7 @@ app.post("/api/users/register", (req, res) => {
 app.post("/api/users/login", (req, res) => {
   //find requested email in database
   User.findOne({ email: req.body.email }, (err, user) => {
-    console.log('user', user)
+    // console.log('user', user)
     if (!user) {
       return res.json({
         loginSuccess: false,

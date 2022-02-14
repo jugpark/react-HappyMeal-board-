@@ -1,13 +1,11 @@
 import React, { Fragment, useState } from "react";
 import styles from "./LoginPage.module.css";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../actions/userAction";
+import { login } from "../../actions/userAction";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,9 +17,9 @@ const LoginPage = () => {
       email: email,
       password: password,
     };
-    dispatch(loginUser(body)).then((response) => {
+    dispatch(login(body)).then((response) => {
       if (response.payload.loginSuccess) {
-        navigate("/");
+        props.history.push("/");
       } else {
         alert("Error˝");
       }
