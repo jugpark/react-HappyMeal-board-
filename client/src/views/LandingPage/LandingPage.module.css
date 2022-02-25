@@ -1,9 +1,11 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 .section {
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Jeju Gothic';
 }
 
 .img {
@@ -32,6 +34,24 @@
   z-index: 10;
   margin-top: -5%;
   flex-direction: column;
+}
+.searchBox {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  z-index: 5;
+}
+.MapContainer {
+  position: absolute;
+  z-index: 4;
+}
+.button {
+  position: relative;
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 .title{
   font-size: 2em;

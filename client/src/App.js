@@ -6,7 +6,7 @@ import RegisterPage from "./views/RegisterPage/RegisterPage";
 import Header from "./components/Header/Header";
 import ProductsPage from "./views/ProductsPage/ProductsPage";
 import Footer from "./components/Footer/Footer";
-// import ProfilePage from "./views/ProfilePage/ProfilePage";
+import ProfilePage from "./views/ProfilePage/ProfilePage";
 import "./App.css";
 
 const App = () => {
@@ -17,10 +17,10 @@ const App = () => {
           <main>
             <Switch>
             <Route exact path="/" component={Auth(LandingPage, null)} />
-            <Route exact path="/login" component={Auth(LoginPage, null)} />
-            <Route exact path="/register" component={Auth(RegisterPage, null)} />
+            <Route exact path="/login" component={Auth(LoginPage, false)} />
+            <Route exact path="/register" component={Auth(RegisterPage, false)} />
+            <Route exact path="/profile" component={Auth(ProfilePage, false)} />
             <Route exact path="/products" component={Auth(ProductsPage, null)} />
-              {/* <Route exact path="/profile" element={<ProfilePage />} /> */}
             </Switch>
           </main>
           <Footer />

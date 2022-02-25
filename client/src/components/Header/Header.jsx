@@ -29,11 +29,11 @@ const Header = () => {
               icon={faShoePrints}
               className={
                 location.pathname === "/"
-                  ? styles.icon_wine
-                  : styles.icon_wine_dark
+                  ? styles.icon_footprint
+                  : styles.icon_footprint_dark
               }
             />
-            GG
+            SN
           </NavLink>
           <ul className={styles.menu}>
             <li>
@@ -57,7 +57,7 @@ const Header = () => {
                     : styles.content_dark
                 }
               >
-                Products
+                발매정보
               </NavLink>
             </li>
             <li>
@@ -69,44 +69,35 @@ const Header = () => {
                     : styles.content_dark
                 }
               >
-                Cart
+                자유게시판
               </NavLink>
             </li>
             {user.userData && user.userData.isAuth ? (
               <li>
-                <div>
                   <NavLink
                     to="/profile"
                     className={
                       location.pathname === "/"
-                        ? styles.content
-                        : styles.content_dark
+                        ? styles.content_profile
+                        : styles.content_profile_dark
                     }
                   >
-                    Profile
+                    프로필  
                   </NavLink>
-                </div>
-                <div>
-                  <NavLink to="/login" onClick={logoutHandler}>
-                    Logout
-                  </NavLink>
-                </div>
-              </li>
-            ) : (
-              <li>
-                <div>
                   <NavLink
-                    to="/register"
+                    to="/"
+                    onClick={logoutHandler}
                     className={
                       location.pathname === "/"
                         ? styles.content
                         : styles.content_dark
                     }
                   >
-                    Register
+                    로그아웃
                   </NavLink>
-                </div>
-                <div>
+              </li>
+            ) : (
+              <li>
                   <NavLink
                     to="/login"
                     className={
@@ -115,9 +106,9 @@ const Header = () => {
                         : styles.content_dark
                     }
                   >
-                    Sign in
+                    로그인
                   </NavLink>
-                </div>
+              
               </li>
             )}
           </ul>

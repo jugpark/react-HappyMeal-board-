@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const { User } = require("./models/User");
+const { Board } = require("./models/Board");
 const { auth } = require("./middleware/auth");
 
 dotenv.config();
@@ -63,9 +64,9 @@ app.post("/api/users/login", (req, res) => {
 
 // role 1 = admin    role 2 = specific admin
 // role 0 = normal user  role != 0 admin
-app.get("/api/users/auth", auth, (req, res) => {
+app.get("/api/users/auth", auth, async (req, res) => {
   //even information reach here, it means authentication works success
-  res.status(200).json({
+  await res.status(200).json({
     _id: req.user._id,
     isAdmin: req.user.role === 0 ? false : true,
     isAuth: true,
@@ -84,6 +85,79 @@ app.get("/api/users/logout", auth, (req, res) => {
       success: true,
     });
   });
+});
+
+app.post("/api/boards/delete", async (req, res) => {
+  try {
+    await Board.remove({
+      _id: req.body._id
+    });
+    res.json({ message: true });
+  } catch (err) {
+    console.log(err);
+    res.json({ message: false });
+  }
+});
+
+app.post("/api/boards/update", async (req, res) => {
+  try {
+    await Board.update(
+      { _id: req.body._id },
+      {
+        $set: {
+          title: req.body.title,
+          content: req.body.content
+        }
+      }
+    );
+    res.json({ message: "게시글이 수정 되었습니다." });
+  } catch (err) {
+    console.log(err);
+    res.json({ message: false });
+  }
+});
+
+app.post("/api/boards/write", async (req, res) => {
+  try {
+    let obj;
+
+    obj = {
+      writer: req.body._id,
+      title: req.body.title,
+      content: req.body.content
+    };
+
+    const board = new Board(obj);
+    await board.save();
+    res.json({ message: "게시글이 업로드 되었습니다." });
+  } catch (err) {
+    console.log(err);
+    res.json({ message: false });
+  }
+});
+
+app.post("/api/boards/getBoardList", async (req, res) => {
+  try {
+    const _id = req.body._id;
+    const board = await Board.find({ writer: _id }, null, {
+      sort: { createdAt: -1 }
+    });
+    res.json({ list: board });
+  } catch (err) {
+    console.log(err);
+    res.json({ message: false });
+  }
+});
+
+app.post("/api/boards/detail", async (req, res) => {
+  try {
+    const _id = req.body._id;
+    const board = await Board.find({ _id });
+    res.json({ board });
+  } catch (err) {
+    console.log(err);
+    res.json({ message: false });
+  }
 });
 
 const PORT = 4000;

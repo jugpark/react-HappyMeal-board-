@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./LandingPage.module.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
@@ -10,27 +10,30 @@ const LandingPage = () => {
     });
   }, []);
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
+
+  const changeHandler = (event) => {
+    event.preventDefault(); 
+  };
+
   return (
     <div>
       <section className={styles.section}>
         <div className={styles.img}></div>
         <div className={styles.content}>
-          <h1 className={styles.title}>New Collection</h1>
-          <h3>Explore our newest collection and find your best one</h3>
+          <h1 className={styles.title}>편하게 검색하고</h1>
+          <h3>다른사람들과 공유도 하고, 발매정보도 얻고</h3>
           <NavLink className={styles.view} to="/products">
-            VIEW
+            발매정보
           </NavLink>
         </div>
       </section>
       <section className={styles.section}>
         <div className={styles.img2}></div>
-        <div className={styles.content}>
-          <h1 className={styles.title}>New Collection</h1>
-          <h3>Explore our newest collection and find your best one</h3>
-          <NavLink className={styles.view} to="/products">
-            VIEW
-          </NavLink>
-        </div>
+        <form onSubmit={submitHandler}>
+        </form>
       </section>
     </div>
   );
