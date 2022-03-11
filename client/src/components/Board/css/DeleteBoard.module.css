@@ -1,0 +1,8 @@
+.Button {
+    color: black;
+    font-size: 12px;
+    line-height: 22px; 
+    font-family: 'Jeju Gothic';
+    border: 0;
+    background-color: transparent;
+}

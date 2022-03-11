@@ -1,0 +1,100 @@
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Jeju Gothic';
+}
+
+.img {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("../../assets/pizza.jpg");
+}
+
+.img2 {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-color: wheat;
+}
+
+.content{
+  position: relative;
+  align-items: center;
+  text-align: center;
+  color: whitesmoke;
+  z-index: 10;
+  margin-top: -5%;
+  flex-direction: column;
+}
+.content2{
+  position: relative;
+  align-items: center;
+  text-align: center;
+  color: darkslategrey;
+  z-index: 10;
+  margin-top: -5%;
+  flex-direction: column;
+}
+.searchBox {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  z-index: 5;
+}
+.MapContainer {
+  position: absolute;
+  z-index: 4;
+}
+.button {
+  position: relative;
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.title{
+  font-size: 2em;
+}
+.view{
+  padding: 10px 10px;
+  border: 2px solid lightgray;
+  color: lightgray;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.view:hover{
+  padding: 10px 10px;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: .5s ease-out;
+  box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
+}
+
+.icon {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  margin: 2rem 1rem;
+  color: white;
+  cursor: pointer;
+  transition: .5s ease-out;
+  box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
+  z-index: 10 ;
+}
+.icon:hover {
+  color: gray;
+  transform: scale(2);
+}

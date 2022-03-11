@@ -1,0 +1,103 @@
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+top: 0;
+left: 0;
+/* position: fixed; */
+padding: 0rem 1.2rem;
+width: 100%;
+color: black;
+background-color: #333;
+font-family: "Jeju Gothic";
+z-index: 5;
+}
+
+.menu {
+display: flex;
+align-items: center;
+text-decoration: none;
+list-style: none;
+padding-left: 0;
+padding-right: 5px;
+}
+
+.menu li {
+padding: 5px 8px;
+}
+
+.logo {
+text-decoration: none;
+color: white;
+font-size: 40px;
+}
+
+.logo_dark{
+text-decoration: none;
+color: wheat;
+font-size: 40px;
+}
+
+.icon_footprint {
+color: lightyellow;
+font-size: 40px;
+padding-right: 10px;
+}
+
+.icon_search {
+padding-top: 5px;
+color: whitesmoke;
+font-size: 20px;
+}
+
+.content{
+color: white;
+display: inline-block;
+text-decoration: none;
+list-style-type: none;
+font-size: 13px;
+}
+
+.content_profile{
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 13px;
+    padding-right:13px;
+}
+
+.content_profile_dark{
+    color: wheat;
+    display: inline-block;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 13px;
+    padding-right:13px;
+}
+
+.content_dark{
+    color: wheat;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 13px;
+}
+
+.icon_footprint_dark {
+    color: wheat;
+    font-size: 40px;
+    padding-right: 10px;
+}
+
+.icon_search_dark {
+    padding-top: 5px;
+    color: wheat;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+.header {
+flex-direction: column;
+}
+.menu {flex-direction: column;}
+}

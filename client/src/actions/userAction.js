@@ -35,7 +35,7 @@ export const register = (dataToSubmit) => {
   };
 };
 
-export function auth() {
+export function auth () {
   const request = axios
     .get("/api/users/auth")
     .then((response) => response.data);

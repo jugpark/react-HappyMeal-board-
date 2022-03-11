@@ -1,0 +1,24 @@
+ .ButtonImage {
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+ }
+
+ .Button {
+   position: relative;
+   z-index: 5;
+   padding: 0;
+   width: 40px;
+   background-color: transparent;
+   font-family: 'Jeju Gothic';
+   border: 0;
+   cursor: pointer;
+}
+  
+ .CommentCounted {
+    display: inline-block;
+    color:black;
+    font-size: 13px;
+    padding-left: 4px;
+ }
+  

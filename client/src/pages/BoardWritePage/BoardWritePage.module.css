@@ -1,0 +1,73 @@
+.Profilebox {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.Profilebtn {
+    display: inline-block;
+    width: 64px;
+    height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 12px 4px;
+    font-size: 13px;
+    line-height: 28px;
+    color: #505050;
+    cursor: pointer;
+    font-family: 'Jeju Gothic';
+}
+
+.MenuBox {
+    color: black;
+    width: 100%;
+    margin: 8px 0px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 0px solid #eaeaea;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 0px; 
+    line-height: auto;
+}
+
+.Input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 40px;
+}
+
+.Textarea {
+    width: 100%;
+    height: 15rem;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 13px;
+    text-align: start;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    vertical-align: middle;
+    flex-direction: column;
+}
+
+.SubmitButton {
+    justify-content: center;;
+    border: 1px solid black;
+    width: 10%;
+    height: 30px;
+    color: black;
+    background-color: transparent;
+    cursor: pointer;   
+    font-family: 'Jeju Gothic';
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.ButtonTittle  {
+    padding: 7px;
+}

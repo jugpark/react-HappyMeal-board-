@@ -1,0 +1,62 @@
+.CommentForm  {
+    position: relative;
+    background-color: whitesmoke;
+    margin: 0px -1px;
+    box-sizing: border-box;
+}
+  
+.Box  {
+    display: flex;
+    justify-content: center;;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    height: 30px;
+    margin: 0px 0px;
+    color: black;
+    background-color: transparent;
+    cursor: pointer;   
+    font-family: 'Jeju Gothic';
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.ButtonTittle  {
+    padding: 7px;
+}
+  
+.MenuIcon {
+    width: 12px;
+    height: 12px;
+    padding: 12px 0px;
+    margin-right: 4px;
+}
+
+.SubmitButton {
+    background-color:transparent;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    cursor: pointer;
+}
+  
+.InputIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.Input {
+    background-color: transparent;
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 40px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+  
+  
