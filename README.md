@@ -107,6 +107,8 @@ const LandingPage = () => {
 
 export default withRouter(LandingPage);
 ```
+<img width="1422" alt="homescreen" src="https://user-images.githubusercontent.com/90168987/158062966-ead71794-b4da-490c-b276-00be04ed6418.png">
+
 
 📌LoginPage
 * onSubmit 함수를 구현함에 있어, userId 를 localstroage 에 저장하여 향 후, 키값으로 사용하도록 했습니다.
@@ -193,7 +195,10 @@ const LoginPage = ({ history }) => {
 
 export default withRouter(LoginPage);
 ```
+<img width="1438" alt="login" src="https://user-images.githubusercontent.com/90168987/158062965-4f92cb0c-8820-4308-b028-fa3bb443de17.png">
+
 📌RegisterPage
+
 ```Javascript
 import React, { useState, Fragment } from "react";
 import styles from "./RegisterPage.module.css";
@@ -528,6 +533,9 @@ function PageList({ history }) {
 
 export default withRouter(PageList);
 ```
+<img width="1440" alt="profile" src="https://user-images.githubusercontent.com/90168987/158063052-174b2905-d8b8-453e-ba0d-a59625ed4d27.png">
+
+
 📌BoardPage
 ```Javascript
 import React from "react";
@@ -546,8 +554,11 @@ function Board({ match }) {
 
 export default withRouter(Board); 
 ```
+<img width="1431" alt="board" src="https://user-images.githubusercontent.com/90168987/158062970-aae86e7e-4e07-4414-b3bc-281585f5992d.png">
+
 
 📌BoardWritePage
+
 ```Javascript
 import React, { useState } from "react";
 import axios from "axios";
@@ -639,3 +650,4 @@ function BoardWritePage({ history, match }) {
 
 export default withRouter(BoardWritePage); 
 ```
+<img width="1439" alt="boardwrite" src="https://user-images.githubusercontent.com/90168987/158063055-7a1e60a2-4327-41d4-bdc6-f1e6d1ad759e.png">
