@@ -21,7 +21,6 @@
 🧰 사용기술
 
 HTML, CSS(PostCSS), Reactjs, Nodejs(Expressjs)
-axios
 
 📌LandingPage
 * section을 두개로 나누어 소개용 섹션과 홍보용 섹션으로 나누었습니다.
