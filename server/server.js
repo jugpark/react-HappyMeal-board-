@@ -9,6 +9,7 @@ const logoutRouter = require("./routes/logout");
 const boardRouter = require("./routes/board");
 const commentRouter = require("./routes/comment");
 const userRouter = require("./routes/user");
+const likeRouter = require("./routes/like");
 const authRouter = require("./routes/auth");
 
 const dotenv = require("dotenv");
@@ -28,8 +29,9 @@ app.use("/api/users/auth", authRouter);
 app.use("/api/users/board", boardRouter);
 app.use("/api/users/comment", commentRouter);
 app.use("/api/users/user", userRouter);
+app.use("/api/users/like", likeRouter);
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`${PORT} 포트에서 서버가 가동되었습니다.`);
 });
