@@ -123,7 +123,7 @@ import { withRouter } from 'react-router-dom';
 
 const LoginPage = ({ history }) => {
   const dispatch = useDispatch();
-  const [inputs, setInput] = useState({
+  const [inputs, setInput] = useState({ // 비구조화 할당
     userId: "",
     userPassword: "",
   });
@@ -131,15 +131,15 @@ const LoginPage = ({ history }) => {
   const { userId, userPassword } = inputs;
 
   const onChange = (e) =>{
-    const { value, name } = e.target;
+    const { value, name } = e.target;  // event 가 일어났을때 value 와 name 추출
     setInput({
-      ...inputs,
-      [name]: value,
+      ...inputs, // Spread Operator 기존의 input 객체 복사
+      [name]: value,   // name 키 가진 값을 value로 설정
     });
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     let body = {
       id: userId,
       password: userPassword,
@@ -651,3 +651,114 @@ function BoardWritePage({ history, match }) {
 export default withRouter(BoardWritePage); 
 ```
 <img width="1439" alt="boardwrite" src="https://user-images.githubusercontent.com/90168987/158063055-7a1e60a2-4327-41d4-bdc6-f1e6d1ad759e.png">
+
+📌 Header
+* useLocation 을 이용하여 현재 url에 따라 다른 글자색을 주어 밝은 배경일때 더 잘 보일 수 있도록 변경하였습니다.
+
+```Javascript
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useLocation } from "react-router-dom";
+import styles from "./Header.module.css";
+import { faPizzaSlice } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { logout } from "../../../actions/userAction";
+
+const Header = (props) => {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const user = useSelector((state) => state.user);
+
+  const logoutHandler = () => {
+    dispatch(logout()).then((response) => {
+      if (response.payload.logoutSuccess) {
+        window.localStorage.removeItem("userId");  //
+        window.localStorage.removeItem("userNickname"); // localStorage 에서 userId 와 userNickname을 지워줌
+        props.history.push("/");
+      } else {
+        alert("로그아웃에 실패했습니다");
+      }
+    });
+  };
+
+  return (
+    <header>
+      <nav>
+        <div className={styles.header}>
+          <NavLink
+            to="/"
+            className={
+              location.pathname === "/" ? styles.logo : styles.logo_dark
+            }
+          >
+            <FontAwesomeIcon
+              icon={faPizzaSlice}
+              className={
+                location.pathname === "/"
+                  ? styles.icon_footprint
+                  : styles.icon_footprint_dark
+              }
+            />
+            HappyMeal
+          </NavLink>
+          <ul className={styles.menu}>
+            <li>
+              <NavLink
+                to="/board"
+                className={
+                  location.pathname === "/"
+                    ? styles.content
+                    : styles.content_dark
+                }
+              >
+                자유게시판
+              </NavLink>
+            </li>
+            {user.userData && user.userData.isAuth ? (
+              <li>
+                  <NavLink
+                    to="/profile"
+                    className={
+                      location.pathname === "/"
+                        ? styles.content_profile
+                        : styles.content_profile_dark
+                    }
+                  >
+                    프로필  
+                  </NavLink>
+                  <NavLink
+                    to="/"
+                    onClick={logoutHandler}
+                    className={
+                      location.pathname === "/" 
+                        ? styles.content
+                        : styles.content_dark
+                    }
+                  >
+                    로그아웃
+                  </NavLink>
+              </li>
+            ) : (
+              <li>
+                  <NavLink
+                    to="/login"
+                    className={
+                      location.pathname === "/"
+                        ? styles.content
+                        : styles.content_dark
+                    }
+                  >
+                    로그인
+                  </NavLink>
+              
+              </li>
+            )}
+          </ul>
+        </div>
+      </nav>
+    </header>
+  );
+};
+export default Header;
+
+```
